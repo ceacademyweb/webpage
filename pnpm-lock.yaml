@@ -11,6 +11,7 @@ specifiers:
   hamburgers: ^1.2.1
   html-react-parser: ^3.0.7
   izitoast: ^1.4.0
+  ng-grid: ^2.0.1
   notiflix: ^3.2.5
   postcss: ^8.4.20
   react: ^18.2.0
@@ -42,6 +43,7 @@ devDependencies:
   '@types/react-dom': 18.0.10
   '@vitejs/plugin-react': 3.0.1_vite@4.0.4
   autoprefixer: 10.4.13_postcss@8.4.20
+  ng-grid: 2.0.1
   postcss: 8.4.20
   sass: 1.57.1
   vite: 4.0.4_sass@1.57.1
@@ -1001,6 +1003,10 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
+
+  /ng-grid/2.0.1:
+    resolution: {integrity: sha512-hnC4Ib0ar/V/Z0v+eMHNmqxdYz9aYeZuV7BiYoPnh+kP9mdYQ0zk/Sm1jqTWeymtYeCSy6PtpZUJsu5n7+I9EQ==}
     dev: true
 
   /node-releases/2.0.8:
