@@ -10,15 +10,16 @@ myHeaders.append(
   'authorization', token
 )
 const apiUrl = 'http://localhost:5000'
-export const ajax =  (url, data, method)=>{
-  let response
+export const ajax = (url, data, method)=>{
   const options = {
-    url: `${apiUrl}${url}`,
-    method: method,
-    headers: myHeaders,
-    data: data
+    method,
+    data: JSON.stringify(data),
+    headers: myHeaders
   }
-  axios(options)
-    .then(res=> {response = res})
-  return response
+ axios(`${apiUrl}${url}`, options)
+   .then(res=> {
+     if (res.status<300){
+       return res
+     }
+   })
 }

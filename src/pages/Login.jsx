@@ -2,7 +2,8 @@ import {useEffect, useState, useRef} from 'react';
 import Logo from '../components/Logo';
 import addClass from '../utils/addClass';
 import Slider from './login/Slider';
-import {ajax} from "../utils/ajax.js";
+import axios from "axios";
+// import {ajax} from "../utils/ajax.js";
 const Login = () => {
   addClass();
   // const [dataForm, setDataForm] = useState(null)
@@ -15,8 +16,25 @@ const Login = () => {
       email : fd.get('email'),
       password: fd.get('password')
     }
-    console.log(dataForm)
-    console.log(ajax('/login', dataForm, 'post'))
+    // console.log(dataForm)
+    e.target.querySelector('button').innerHTML='cargando'
+    // console.log(ajax('/login', dataForm, 'post'))
+    const options = {
+      method: 'POST',
+      data: JSON.stringify(dataForm),
+      headers : {
+        'content-type': 'application/json'
+      }
+    }
+    axios('http://localhost:5000/login',options)
+      .then(res=> {
+        e.target.querySelector('button').innerHTML='correcto'
+        console.log(res)
+      })
+      .catch(err=> {
+        e.target.querySelector('button').innerHTML='error'
+        console.log(err)
+      })
   }
   return (
     <section className="login form-section">
@@ -25,7 +43,7 @@ const Login = () => {
           <Logo />
           <Slider />
         </div>
-        <img src="/img/fondo1.jpg" className="img-fondo" alt="fondo registro" />
+        <img src="/img/login-bg.jpg" className="img-fondo" alt="fondo registro" />
       </div>
       <div className="form-section__container">
         <div className="form-section__header">
@@ -37,7 +55,7 @@ const Login = () => {
             Inicia Sesión
           </a> */}
         </div>
-        <h1>Registrate con Nosotros</h1>
+        <h1>Inicia Sesión</h1>
         <form
           action=""
           className="form-section__form"

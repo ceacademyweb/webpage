@@ -17,12 +17,13 @@ export default function App() {
   return (
     <>
       <Swiper
+        speed={800}
         direction={'vertical'}
         loop={true}
         className="mySwiper"
         modules={[Autoplay]}
         autoplay={{
-          delay: 3000,
+          delay: 5000,
         }}
       >
         <SwiperSlide>

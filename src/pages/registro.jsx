@@ -2,6 +2,7 @@ import { userState, useState } from 'react';
 import Logo from '../components/Logo';
 import addClass from '../utils/addClass';
 import Slider from './login/Slider';
+import {NavLink} from "react-router-dom";
 const Registro = () => {
   addClass();
   const [user, setUser] = useState({
@@ -28,7 +29,7 @@ const Registro = () => {
           <Slider />
         </div>
         <img
-          src="/img/fondo1.jpg"
+          src="/img/login-bg.jpg"
           className="img-fondo"
           alt="fondo registro"
           onSubmit={submit}
@@ -40,9 +41,9 @@ const Registro = () => {
             <img src="/img/logo.svg" alt="" />
             <Slider />
           </a>
-          <a href="/login" className="ini-sesion">
+          <NavLink to="/login" className="ini-sesion">
             Inicia Sesión
-          </a>
+          </NavLink>
         </div>
         <h1>Registrate con Nosotros</h1>
         <form

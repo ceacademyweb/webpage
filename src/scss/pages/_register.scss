@@ -20,25 +20,28 @@
       order: 2;
       height: 100%;
       position: relative;
+      background: #000;
       .img-logo{
         position: absolute;
-        top: 1em;
+        top: 50%;
         left: 8%;
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: center;
+        transform: translateY(-150%);
+        z-index: 10;
 
         // justify-content: center;
         img ,svg{
           width: 100px;
-          fill: #fff;
+          fill: #000;
           // opacity: .5;
         }
         p{
           margin-bottom: 0;
           margin-left: 1em;
           font-size: 1.1em;
-          color: #fff;
+          color: #000;
         }
       }
       .img-fondo{
@@ -46,6 +49,7 @@
         height: 100%;
         object-fit: cover;
         object-position: left center;
+        opacity: .85;
       }
     }
   }
@@ -104,7 +108,7 @@
     input{
       font-family: inherit;
       font-size: inherit;
-      line-height: 1.75em;
+      line-height: 2em;
       padding: 0 .5em;
       border: 1px solid rgba(#000,.5);
       border-radius: .2rem;
