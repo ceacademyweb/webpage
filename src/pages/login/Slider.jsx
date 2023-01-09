@@ -22,7 +22,7 @@ export default function App() {
         className="mySwiper"
         modules={[Autoplay]}
         autoplay={{
-          delay: 1500,
+          delay: 3000,
         }}
       >
         <SwiperSlide>

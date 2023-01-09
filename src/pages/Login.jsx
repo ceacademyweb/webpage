@@ -1,9 +1,23 @@
-import React from 'react';
+import {useEffect, useState, useRef} from 'react';
 import Logo from '../components/Logo';
 import addClass from '../utils/addClass';
 import Slider from './login/Slider';
+import {ajax} from "../utils/ajax.js";
 const Login = () => {
   addClass();
+  // const [dataForm, setDataForm] = useState(null)
+  useEffect(()=>{
+  },[])
+  const handledSubmit =  (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.target)
+    const dataForm ={
+      email : fd.get('email'),
+      password: fd.get('password')
+    }
+    console.log(dataForm)
+    console.log(ajax('/login', dataForm, 'post'))
+  }
   return (
     <section className="login form-section">
       <div className="form-section__img">
@@ -29,6 +43,7 @@ const Login = () => {
           className="form-section__form"
           aria-autocomplete="off"
           autoComplete="off"
+          onSubmit={handledSubmit}
         >
           <div className="group">
             <label htmlFor="email1">Correo Electrónico</label>
@@ -52,7 +67,7 @@ const Login = () => {
           </div>
           <div className="form-registro__footer">
             <div className="notes show"></div>
-            <button className="register-btn">Registrar</button>
+            <button className="register-btn">Ingresar</button>
           </div>
         </form>
       </div>
