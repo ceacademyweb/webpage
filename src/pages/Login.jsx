@@ -1,50 +1,49 @@
-import {useEffect, useState, useRef} from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Logo from '../components/Logo';
 import addClass from '../utils/addClass';
-import Slider from './login/Slider'
-import { useJwt } from "react-jwt";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import Slider from './login/Slider';
+import { useJwt } from 'react-jwt';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // import {ajax} from "../utils/ajax.js";
 const Login = () => {
   addClass();
   // const [dataForm, setDataForm] = useState(null)
-  const navigate = useNavigate()
-  useEffect(()=>{
-  },[])
-  const handledSubmit =  (e)=>{
+  const navigate = useNavigate();
+  useEffect(() => {}, []);
+  const handledSubmit = (e) => {
     e.preventDefault();
-    const fd = new FormData(e.target)
-    const dataForm ={
-      email : fd.get('email'),
-      password: fd.get('password')
-    }
+    const fd = new FormData(e.target);
+    const dataForm = {
+      email: fd.get('email'),
+      password: fd.get('password'),
+    };
     // console.log(dataForm)
-    const button = e.target.querySelector('button')
-    button.innerHTML='<img src="/img/load.svg" alt="">'
+    const button = e.target.querySelector('button');
+    button.innerHTML = '<img src="/img/load.svg" alt="">';
     // console.log(ajax('/login', dataForm, 'post'))
     const options = {
       method: 'POST',
       data: JSON.stringify(dataForm),
-      headers : {
-        'content-type': 'application/json'
-      }
-    }
-    axios('http://localhost:5000/login',options)
-      .then(res=> {
-        button.innerHTML='correcto'
-        console.log(res.data)
-        sessionStorage.setItem('token', res.data.token)
-        sessionStorage.setItem('user', JSON.stringify(res.data.userData))
+      headers: {
+        'content-type': 'application/json',
+      },
+    };
+    axios('https://api.ceacademy.world/login', options)
+      .then((res) => {
+        button.innerHTML = 'correcto';
+        console.log(res.data);
+        sessionStorage.setItem('token', res.data.token);
+        sessionStorage.setItem('user', JSON.stringify(res.data.userData));
         // const { decodedToken, isExpired, reEvaluateToken } = useJwt(res.data.token);
         // console.log(decodedToken)
-        navigate('/media')
+        navigate('/media');
       })
-      .catch(err=> {
+      .catch((err) => {
         // e.target.querySelector('button').innerHTML='error'
-        console.log(err)
-      })
-  }
+        console.log(err);
+      });
+  };
   return (
     <section className="login form-section">
       <div className="form-section__img">
@@ -52,7 +51,11 @@ const Login = () => {
           <Logo />
           <Slider />
         </div>
-        <img src="/img/login-bg.jpg" className="img-fondo" alt="fondo registro" />
+        <img
+          src="/img/login-bg.jpg"
+          className="img-fondo"
+          alt="fondo registro"
+        />
       </div>
       <div className="form-section__container">
         <div className="form-section__header">

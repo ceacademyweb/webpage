@@ -2,7 +2,7 @@ import { userState, useState } from 'react';
 import Logo from '../components/Logo';
 import addClass from '../utils/addClass';
 import Slider from './login/Slider';
-import {NavLink} from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 const Registro = () => {
   addClass();
   const [user, setUser] = useState({
