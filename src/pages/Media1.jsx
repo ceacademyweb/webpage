@@ -12,7 +12,8 @@ const Media1 = () => {
   const [user, setUser] = useState();
   useEffect(() => {
     const isLogged = sessionStorage.getItem('token');
-    if (!isLogged || !JSON.parse(sessionStorage.getItem('user')).email) {
+    const userObj = sessionStorage.getItem('user') || null;
+    if (!isLogged || !userObj) {
       navigate('/login');
     }
     api
@@ -21,12 +22,8 @@ const Media1 = () => {
         setVideos(res.data);
       })
       .catch((err) => setError(err));
-    setUser(JSON.parse(sessionStorage.getItem('user')));
-    console.log(user);
-
-    setCopy(
-      `${JSON.parse(sessionStorage.getItem('user')).email.split('@')[0]}@`
-    );
+    const copyemail = JSON.parse(userObj).email.split('@')[0] || nul;
+    setCopy(`${copyemail}@`);
   }, []);
   return (
     <section className="section Media">
