@@ -12,7 +12,7 @@ const Media1 = () => {
   const [user, setUser] = useState();
   useEffect(() => {
     const isLogged = sessionStorage.getItem('token');
-    if (!isLogged) {
+    if (!isLogged || JSON.parse(sessionStorage.getItem('user')).email) {
       navigate('/login');
     }
     api
