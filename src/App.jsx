@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Registro from './pages/registro';
 import Test from './pages/Test';
+import Media1 from './pages/Media1.jsx';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/media" element={<Media1 />} />
         </Routes>
       </main>
       <Footer />

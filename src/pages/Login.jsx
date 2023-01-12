@@ -1,12 +1,15 @@
 import {useEffect, useState, useRef} from 'react';
 import Logo from '../components/Logo';
 import addClass from '../utils/addClass';
-import Slider from './login/Slider';
+import Slider from './login/Slider'
+import { useJwt } from "react-jwt";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // import {ajax} from "../utils/ajax.js";
 const Login = () => {
   addClass();
   // const [dataForm, setDataForm] = useState(null)
+  const navigate = useNavigate()
   useEffect(()=>{
   },[])
   const handledSubmit =  (e)=>{
@@ -17,7 +20,8 @@ const Login = () => {
       password: fd.get('password')
     }
     // console.log(dataForm)
-    e.target.querySelector('button').innerHTML='cargando'
+    const button = e.target.querySelector('button')
+    button.innerHTML='<img src="/img/load.svg" alt="">'
     // console.log(ajax('/login', dataForm, 'post'))
     const options = {
       method: 'POST',
@@ -28,11 +32,16 @@ const Login = () => {
     }
     axios('http://localhost:5000/login',options)
       .then(res=> {
-        e.target.querySelector('button').innerHTML='correcto'
-        console.log(res)
+        button.innerHTML='correcto'
+        console.log(res.data)
+        sessionStorage.setItem('token', res.data.token)
+        sessionStorage.setItem('user', JSON.stringify(res.data.userData))
+        // const { decodedToken, isExpired, reEvaluateToken } = useJwt(res.data.token);
+        // console.log(decodedToken)
+        navigate('/media')
       })
       .catch(err=> {
-        e.target.querySelector('button').innerHTML='error'
+        // e.target.querySelector('button').innerHTML='error'
         console.log(err)
       })
   }
@@ -71,6 +80,7 @@ const Login = () => {
               id="email1"
               placeholder=" "
               autoComplete="off"
+              required
             />
           </div>
           <div className="group">
@@ -81,6 +91,7 @@ const Login = () => {
               id="password"
               placeholder=" "
               autoComplete="off"
+              required
             />
           </div>
           <div className="form-registro__footer">

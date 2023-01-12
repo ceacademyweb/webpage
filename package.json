@@ -11,17 +11,24 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "@tanstack/react-query": "^4.22.0",
+    "@u-wave/react-vimeo": "^0.9.10",
     "aos": "^2.3.4",
     "axios": "^1.2.2",
+    "bootstrap-icons": "^1.10.3",
     "hamburgers": "^1.2.1",
     "html-react-parser": "^3.0.7",
     "izitoast": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
     "notiflix": "^3.2.5",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
+    "react-jwt": "^1.1.7",
     "react-router-dom": "^6.6.1",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "video.js": "^7.20.3",
+    "zustand": "^4.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

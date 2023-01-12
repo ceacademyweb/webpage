@@ -15,20 +15,20 @@ const menu = [
     title: 'Management',
     link: '/management',
   },
-  // {
-  //   title: 'Media',
-  //   link: '/media',
-  // children: [
-  //   {
-  //     title: 'Ebooks',
-  //     link: '/ebooks',
-  //   },
-  //   {
-  //     title: 'Podcast',
-  //     link: '/podcast',
-  //   },
-  // ],
-  // },
+  {
+    title: 'Media',
+    link: '/media',
+    // children: [
+    //   {
+    //     title: 'Ebooks',
+    //     link: '/ebooks',
+    //   },
+    //   {
+    //     title: 'Podcast',
+    //     link: '/podcast',
+    //   },
+    // ],
+  },
   {
     title: 'Contacto',
     link: '/contacto',

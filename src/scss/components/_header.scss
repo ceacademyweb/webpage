@@ -42,7 +42,7 @@
   overflow: hidden;
   transition: max-height 0.5s linear;
   &.is-active{
-    max-height: 17em;;
+    max-height: 22em;;
   }
   @include from(lg){
     max-height: unset;
