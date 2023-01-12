@@ -9,10 +9,9 @@ const Media1 = () => {
   const navigate = useNavigate();
   const [videos, setVideos] = useState([]);
   const [copy, setCopy] = useState();
-  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [user, setUser] = useState();
   useEffect(() => {
     const isLogged = sessionStorage.getItem('token');
-    setCopy(`${user.email.split('@')[0]}@`);
     if (!isLogged) {
       navigate('/login');
     }
@@ -22,18 +21,24 @@ const Media1 = () => {
         setVideos(res.data);
       })
       .catch((err) => setError(err));
+    setUser(JSON.parse(sessionStorage.getItem('user')));
+    console.log(user);
+
+    setCopy(
+      `${JSON.parse(sessionStorage.getItem('user')).email.split('@')[0]}@`
+    );
   }, []);
   return (
     <section className="section Media">
-      <h1 style={{ textAlight: 'center' }}>Nuestros Videos</h1>
+      <h1 style={{ textAlight: 'center' }}>Face Uno</h1>
       <div className="video-container">
         <Video2
-          src="https://stunning-mandazi-a6d131.netlify.app/estructura_de_mercado.mp4"
+          src="https://stunning-mandazi-a6d131.netlify.app/rr-nuevo.mp4"
           copy={copy}
         />
-        {videos.map((video) => (
+        {/* {videos.map((video) => (
           <Video2 key={video.name} src={video.url} copy={copy} />
-        ))}
+        ))} */}
       </div>
     </section>
   );

@@ -16,7 +16,7 @@ const menu = [
     link: '/management',
   },
   {
-    title: 'Media',
+    title: 'Lift-off',
     link: '/media',
     // children: [
     //   {

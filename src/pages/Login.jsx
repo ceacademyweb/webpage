@@ -29,7 +29,8 @@ const Login = () => {
         'content-type': 'application/json',
       },
     };
-    axios('https://api.ceacademy.world/login', options)
+    axios('https://ceacademy-auth-production.up.railway.app/login', options)
+      // axios('http://localhost:5000/login', options)
       .then((res) => {
         button.innerHTML = 'correcto';
         console.log(res.data);

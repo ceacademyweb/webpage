@@ -2,17 +2,52 @@ import { userState, useState } from 'react';
 import Logo from '../components/Logo';
 import addClass from '../utils/addClass';
 import Slider from './login/Slider';
-import { NavLink } from 'react-router-dom';
-const Registro = () => {
+import { NavLink, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+const Registro = (e) => {
   addClass();
   const [user, setUser] = useState({
     name: '',
     email: '',
     password: '',
-    password_confirmation: '',
+    password_validator: '',
   });
-  const submit = () => {
+  const submit = (e) => {
     e.preventDefault();
+    const target = e.target;
+    const formData = new FormData(target);
+    setUser({
+      name: formData.get('name'),
+      email: formData.get('email'),
+      password: formData.get('password'),
+      password_validator: formData.get('password_validator'),
+    });
+    if (user.password_validator !== user.password) {
+      alert('Las contraseñs debe ser iguales');
+      return;
+    }
+    const button = e.target.querySelector('button');
+    button.innerHTML = '<img src="/img/load.svg" alt="">';
+    // console.log(ajax('/login', dataForm, 'post'))
+    const options = {
+      method: 'POST',
+      data: JSON.stringify(user),
+      headers: {
+        'content-type': 'application/json',
+      },
+    };
+    axios('https://ceacademy-auth-production.up.railway.app/users', options)
+      .then((res) => {
+        button.innerHTML = 'correcto';
+        console.log(res.data);
+        // const { decodedToken, isExpired, reEvaluateToken } = useJwt(res.data.token);
+        // console.log(decodedToken)
+        // navigate('/media');
+      })
+      .catch((err) => {
+        // e.target.querySelector('button').innerHTML='error'
+        console.log(err);
+      });
     console.log(user);
   };
   const handleChange = ({ target: { name, value } }) => {
@@ -86,11 +121,11 @@ const Registro = () => {
             />
           </div>
           <div className="group">
-            <label htmlFor="password-validator">Repetir Contraseña</label>
+            <label htmlFor="password_validator">Repetir Contraseña</label>
             <input
               type="password"
-              name="password-validator"
-              id="password-validator"
+              name="password_validator"
+              id="password_validator"
               placeholder=" "
               autoComplete="off"
               onChange={handleChange}
