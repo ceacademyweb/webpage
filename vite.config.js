@@ -7,7 +7,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 export default defineConfig({
   plugins: [
     react(),
-    removeConsole(),
+    // removeConsole(),
     qrcode(),
     viteStaticCopy({
       targets: [
