@@ -29,6 +29,7 @@ pjsdiv {
   display: block;
 }
 .waterMark.pause {
+  display: block;
   top: unset;
   left: 50%;
   bottom: 15%;

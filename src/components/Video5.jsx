@@ -23,7 +23,6 @@ setInterval(() => {
 }, 10000);
 
 function Video5({ url, copy }) {
-  console.log(copy);
   const videoUrl = useState(url);
   useEffect(() => {
     const player = new Playerjs({
@@ -32,11 +31,11 @@ function Video5({ url, copy }) {
       // autoplay: true,
     });
     const video = document.querySelector('.video-content video');
-    video.play();
+    // video.play();
     const layer = document.createElement('div');
     const waterMark = document.createElement('div');
     layer.className = 'layer-apuse';
-    waterMark.className = 'waterMark';
+    waterMark.className = 'waterMark pause';
     video.parentElement.insertAdjacentElement('afterBegin', layer);
     video.parentElement.firstChild.insertAdjacentElement('afterEnd', waterMark);
     waterMark.innerText = copy;

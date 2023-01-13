@@ -6,6 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const Registro = (e) => {
   addClass();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -40,7 +41,9 @@ const Registro = (e) => {
       // axios('http://localhost:5000/login', options)
       .then((res) => {
         button.innerHTML = 'correcto';
-        console.log(res.data);
+        if (res.status >= 200 && res.status < 300) {
+          navigate('/login');
+        }
         // const { decodedToken, isExpired, reEvaluateToken } = useJwt(res.data.token);
         // console.log(decodedToken)
         // navigate('/media');

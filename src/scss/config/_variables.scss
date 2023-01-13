@@ -14,7 +14,7 @@ $linear-gradient: linear-gradient(to right, #3264f5 2%, #7004bc 82%);
 
   @include from(m) {
     --header-height: 100px;
-    --font-size: 13px;
+    --font-size: 15px;
   }
 
   @include from(l) {

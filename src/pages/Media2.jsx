@@ -33,7 +33,7 @@ const Media2 = ({ videos, setVideosFn }) => {
           <li key={video.name}>
             <Link to={`/face/1/${video._id}`}>
               <figure>
-                <img src={video.poster} alt={video.name} />
+                <img src={'/img/video-fondo.jpg'} alt={video.name} />
                 <figcaption>
                   {video.pos}. {video.name}
                 </figcaption>
