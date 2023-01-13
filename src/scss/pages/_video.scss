@@ -1,0 +1,52 @@
+.Video{
+  @include from(m){
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @include from(lg){
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__container{
+    @include from(700px){
+      display: grid;
+      grid-template-columns: 1fr 40%;
+      column-gap: 1em;
+    }
+    @include tablet(){
+      display: block;
+    }
+    @include tabletLandscape() {
+      display: grid;
+      column-gap: 2em;
+      grid-template-columns: 1fr 30%;
+    }
+    @include from(lg){
+      column-gap: 4em;
+      grid-template-columns: 1fr 30%;
+    }
+  }
+  &__content{
+    margin-bottom: 2em;
+    @include from(700px) {
+      margin-bottom: 0;
+    }
+    @include tablet() {
+      margin-bottom: 2em;
+    }
+    @include tabletLandscape(){
+      margin-bottom: 0;
+    }
+  }
+  &__list{
+    h3{
+      text-align: center;
+    }
+    li{
+      line-height: 2em;
+      @include from(lg){
+        font-size: 1.3em;
+      }
+    }
+  }
+}

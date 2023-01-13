@@ -6,7 +6,7 @@ import { useJwt } from 'react-jwt';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // import {ajax} from "../utils/ajax.js";
-const Login = () => {
+const Login = ({ user, setUserFn }) => {
   addClass();
   // const [dataForm, setDataForm] = useState(null)
   const navigate = useNavigate();
@@ -29,13 +29,15 @@ const Login = () => {
         'content-type': 'application/json',
       },
     };
-    axios('https://ceacademy-auth-production.up.railway.app/login', options)
-      // axios('http://localhost:5000/login', options)
+    // axios('https://ceacademy-auth-production.up.railway.app/login', options)
+    axios('http://localhost:5000/login', options)
       .then((res) => {
         button.innerHTML = 'correcto';
-        console.log(res.data);
-        sessionStorage.setItem('token', res.data.token);
-        sessionStorage.setItem('user', JSON.stringify(res.data.userData));
+        // console.log(res.data);
+        // sessionStorage.setItem('token', res.data.token);
+        setUserFn(res.data.userData, res.data.token);
+        // console.log(user);
+        // sessionStorage.setItem('user', JSON.stringify(res.data.userData));
         // const { decodedToken, isExpired, reEvaluateToken } = useJwt(res.data.token);
         // console.log(decodedToken)
         navigate('/media');
