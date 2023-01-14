@@ -17,7 +17,7 @@ const menu = [
   },
   {
     title: 'Lift-off',
-    link: '/media',
+    link: 'http://lift-off.ceacademy.world',
     // children: [
     //   {
     //     title: 'Ebooks',
