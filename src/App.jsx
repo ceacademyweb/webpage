@@ -32,10 +32,10 @@ function App() {
   };
   useEffect(() => {
     AOS.init({
-      startEvent: 'load',
+      // startEvent: 'load',
       easing: 'ease-out-back',
       duration: 850,
-      // startEvent: 'DOMContentLoaded',
+      startEvent: 'DOMContentLoaded',
       useClassNames: true,
       // once: true,
     });

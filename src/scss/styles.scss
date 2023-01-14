@@ -73,3 +73,21 @@ $legacy : true; // Soporte para versiones antiguas
   width: 500px;
   background-color: lime;
 }
+
+[data-ce]{
+  opacity: .3;
+  animation: show .5s forwards linear;
+  // transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  @keyframes show {
+    to{
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+}
+[data-ce="fade-left"]{
+  transform: translateX(20%);
+}
+[data-ce="fade-right"]{
+  transform: translateX(-20%);
+}
