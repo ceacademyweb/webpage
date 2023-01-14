@@ -8,7 +8,7 @@ const About = () => {
           <img src={`/img/about.jpg`} alt="" />
         </div>
         <div className="About__text">
-          <h2 data-aos="fade-left">Acerca de CE Academy</h2>
+          <h2 data-aos="fade-left">Acerca de CEACADEMY</h2>
           <p data-aos="fade-left" data-aos-delay="100">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
             feugiat congue viverra facilisis. Mauris, volutpat mi libero tellus

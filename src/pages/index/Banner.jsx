@@ -7,7 +7,7 @@ const Banner = () => {
         <div className="Testimony__container col-2">
           <div className="Testimony__text" data-aos="flip-left">
             <h2>
-              CE Academy me ayudó a aprender las habilidades para conseguir el
+              CEACADEMY me ayudó a aprender las habilidades para conseguir el
               trabajo de mis sueños.
             </h2>
             <p>

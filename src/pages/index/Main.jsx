@@ -9,7 +9,7 @@ function Main() {
             Crece tus Habilidades, <span>define tu futuro</span>
           </h1>
           <p data-aos="fade-right" data-aos-delay="100">
-            Presentamos CEAcademy, la escuela del futuro. Te enseñamos las
+            Presentamos CEACADEMY, la escuela del futuro. Te enseñamos las
             habilidades adecuadas para estar preparado para el mañana.
           </p>
           <div

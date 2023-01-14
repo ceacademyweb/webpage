@@ -8,7 +8,7 @@ const Contact = () => {
       <div className="Card Contact__card">
         <h1>Contáctenos</h1>
         <p>
-          Si tiene alguna pregunta sobre Academy, complete el siguiente
+          Si tiene alguna pregunta sobre CEACADEMY, complete el siguiente
           formulario.
         </p>
         <img className="img-mail" src="/img/mail.svg" alt="mail" />

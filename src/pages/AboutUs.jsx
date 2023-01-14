@@ -17,7 +17,7 @@ const AboutUs = () => {
         <h1>
           La misión detrás
           <br />
-          de ECACADEMY
+          de CEACADEMY
         </h1>
         <Carroucel />
       </div>
