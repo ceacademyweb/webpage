@@ -18,16 +18,10 @@ const menu = [
   {
     title: 'Lift-off',
     link: 'http://lift-off.ceacademy.world',
-    // children: [
-    //   {
-    //     title: 'Ebooks',
-    //     link: '/ebooks',
-    //   },
-    //   {
-    //     title: 'Podcast',
-    //     link: '/podcast',
-    //   },
-    // ],
+  },
+  {
+    title: 'TRADEPLOY',
+    link: 'http://tradeploy.ceacademy.world',
   },
   {
     title: 'Contacto',

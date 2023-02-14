@@ -6,7 +6,7 @@ const Menu = ({ active, action }) => {
     <ul className={`main-menu ${active ? 'is-active' : ''}`}>
       {menu.map((item) => (
         <li key={item.title} className="main-menu__item">
-          {item.title !== 'Lift-off' ? (
+          {item.title !== 'Lift-off' && item.title !== 'TRADEPLOY' ? (
             <NavLink
               onClick={action}
               className={'main-menu__link'}
